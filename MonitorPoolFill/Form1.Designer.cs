@@ -39,11 +39,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tb_FlowThisFIll = new System.Windows.Forms.TextBox();
+            this.tb_Interval = new System.Windows.Forms.TextBox();
+            this.cb_Debug = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_Version = new System.Windows.Forms.Label();
+            this.cb_Noise = new System.Windows.Forms.CheckBox();
             this.pnl_Status.SuspendLayout();
             this.SuspendLayout();
             // 
             // rtb_PoolFill
             // 
+            this.rtb_PoolFill.HideSelection = false;
             this.rtb_PoolFill.Location = new System.Drawing.Point(43, 64);
             this.rtb_PoolFill.Name = "rtb_PoolFill";
             this.rtb_PoolFill.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
@@ -63,9 +69,10 @@
             // 
             // tb_ErrorList
             // 
-            this.tb_ErrorList.Location = new System.Drawing.Point(291, 623);
+            this.tb_ErrorList.Location = new System.Drawing.Point(223, 623);
+            this.tb_ErrorList.Multiline = true;
             this.tb_ErrorList.Name = "tb_ErrorList";
-            this.tb_ErrorList.Size = new System.Drawing.Size(428, 20);
+            this.tb_ErrorList.Size = new System.Drawing.Size(496, 59);
             this.tb_ErrorList.TabIndex = 2;
             // 
             // pnl_Status
@@ -135,11 +142,64 @@
             this.tb_FlowThisFIll.Size = new System.Drawing.Size(138, 20);
             this.tb_FlowThisFIll.TabIndex = 9;
             // 
+            // tb_Interval
+            // 
+            this.tb_Interval.Location = new System.Drawing.Point(739, 24);
+            this.tb_Interval.Name = "tb_Interval";
+            this.tb_Interval.Size = new System.Drawing.Size(100, 20);
+            this.tb_Interval.TabIndex = 11;
+            this.tb_Interval.Text = "21";
+            // 
+            // cb_Debug
+            // 
+            this.cb_Debug.AutoSize = true;
+            this.cb_Debug.Checked = true;
+            this.cb_Debug.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_Debug.Location = new System.Drawing.Point(147, 643);
+            this.cb_Debug.Name = "cb_Debug";
+            this.cb_Debug.Size = new System.Drawing.Size(58, 17);
+            this.cb_Debug.TabIndex = 12;
+            this.cb_Debug.Text = "Debug";
+            this.cb_Debug.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(736, 8);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Interval Seconds";
+            // 
+            // lbl_Version
+            // 
+            this.lbl_Version.AutoSize = true;
+            this.lbl_Version.Location = new System.Drawing.Point(820, 672);
+            this.lbl_Version.Name = "lbl_Version";
+            this.lbl_Version.Size = new System.Drawing.Size(32, 13);
+            this.lbl_Version.TabIndex = 14;
+            this.lbl_Version.Text = "Ver 1";
+            // 
+            // cb_Noise
+            // 
+            this.cb_Noise.AutoSize = true;
+            this.cb_Noise.Location = new System.Drawing.Point(147, 664);
+            this.cb_Noise.Name = "cb_Noise";
+            this.cb_Noise.Size = new System.Drawing.Size(53, 17);
+            this.cb_Noise.TabIndex = 15;
+            this.cb_Noise.Text = "Noise";
+            this.cb_Noise.UseVisualStyleBackColor = true;
+            // 
             // MonitorPoolFill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(892, 694);
+            this.Controls.Add(this.cb_Noise);
+            this.Controls.Add(this.lbl_Version);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cb_Debug);
+            this.Controls.Add(this.tb_Interval);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tb_FlowThisFIll);
             this.Controls.Add(this.label2);
@@ -172,6 +232,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tb_FlowThisFIll;
+        private System.Windows.Forms.TextBox tb_Interval;
+        private System.Windows.Forms.CheckBox cb_Debug;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_Version;
+        private System.Windows.Forms.CheckBox cb_Noise;
     }
 }
 
