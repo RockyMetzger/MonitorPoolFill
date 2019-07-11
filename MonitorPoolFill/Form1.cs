@@ -35,12 +35,13 @@ namespace MonitorPoolFill
         public int rtbLineCount = 0;
         public double FiveMinTotal = 0.0, HourTotal = 0.0, DayTotal = 0.0, FlowThisFill = 0.0;
         public ulong FiveMinCount = 0, HourCount = 0, DayCount = 0;
-        public double ScaleFactor = 1800.0f;  // assume 3000 clicks ber gallon changed to 1800 4/2/18 20:54
+        public double ScaleFactor = 3012.0f;  // assume 3000 clicks per gallon changed to 1800 4/2/18 20:54
+                                                // Changed to 3102 8/5/18
         string StringToPrint;
-        static double VersionNumber = 2.01;
+        static double VersionNumber = 3.01;
         public MonitorPoolFill()
         {
-            GPIO.pullUpDnControl(meterPin, 2);   // May not be needed.
+            GPIO.pullUpDnControl(meterPin, 1);   // May not be needed.
             if (Init.WiringPiSetupPhys() == -1) // The WiringPiSetup method is static and returns either true or false. Calling it in this fashion
             //    if (Init.WiringPiSetupGpio() == -1) // The WiringPiSetup method is static and returns either true or false. Calling it in this fashion
                 {
@@ -51,7 +52,7 @@ namespace MonitorPoolFill
             //GPIO.pullUpDnControl(meterPin, 2);   // May not be needed.
 
             if (PiThreadInterrupts.wiringPiISR(meterPin,
-                (int)PiThreadInterrupts.InterruptLevels.INT_EDGE_RISING, meterClick) < 0) // Initialize the Interrupt and set the callback to our method above
+                (int)PiThreadInterrupts.InterruptLevels.INT_EDGE_BOTH, meterClick) < 0) // Initialize the Interrupt and set the callback to our method above
             {
                 throw new Exception("Unable to Initialize ISR");
             }
@@ -310,7 +311,6 @@ namespace MonitorPoolFill
             Console.WriteLine(text + "\n");
            
             if (1 == 1) return;
-
             try
             {
 
